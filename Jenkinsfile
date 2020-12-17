@@ -18,7 +18,7 @@ pipeline {
 				CODECOV_TOKEN = credentials ('CODECOV_TOKEN')
 			}
 			steps {
-				sh 'go ./.. -coverprofile=coverage.txt'
+				sh 'go ./... -coverprofile=coverage.txt'
 				sh 'curl -s https//codecov.io/bash | bash -s -'
 			}
 		}
